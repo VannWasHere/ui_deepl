@@ -8,8 +8,8 @@ How to run project:
 - pip install python-dotenv
 - FLASK_APP=app.py
 - FLASK_ENV=development
-- flask run
 
 ## Run Application
+- flask run
 - cd ..
 - npm run dev
