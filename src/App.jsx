@@ -51,15 +51,11 @@ const App = () => {
           'Content-Type': 'application/json',
         }
       });
-      if(response) setData(response);
+      if(response.data && response.data.data) setData(response.data.data);
     } catch (error) {
       console.log(error);
     }
   }
-
-  useEffect(() => {
-    receivedData();
-  }, [])
 
   console.log(getData);
 
@@ -77,6 +73,9 @@ const App = () => {
               <button onClick={(e) => submitForm(e)} className="mt-12 bg-indigo-800 w-full p-4 rounded-lg text-white font-bold tracking-wider uppercase">Predict</button>
             </div>
             <div className="w-full">
+            {getData && getData.data.map((item, key) => (
+              <p key={key}>{item}</p>
+            ))}
             </div>
         </div>
       </div>
