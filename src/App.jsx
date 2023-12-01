@@ -34,7 +34,7 @@ const App = () => {
     try {
       await axios.post('http://localhost:5000/check', {
         data: formData,
-      }, {
+    }, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -50,7 +50,7 @@ const App = () => {
         headers: {
           'Content-Type': 'application/json',
         }
-      });
+    });
       if(response.data && response.data.data) setData(response.data.data);
     } catch (error) {
       console.log(error);
