@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const App = () => {
+
+  const [getData, setData] = useState(null);
 
   const [userInput, setUserInput] = useState({
     merk: 1,
@@ -15,7 +17,7 @@ const App = () => {
     setUserInput((prevState) => ({...prevState, [name]: value}))
   }
 
-  const submitForm = () => {
+  const submitForm = async () => {
     const convertedInputs = {
       merk: parseInt(userInput.merk),
       tahunKendaraan: parseInt(userInput.tahunKendaraan),
@@ -24,7 +26,8 @@ const App = () => {
       lokasi: parseInt(userInput.lokasi),
     };
     const obj2Arr = Object.values(convertedInputs);
-    sendData(obj2Arr);
+    await sendData(obj2Arr);
+    console.log("Halo");
   }
 
   const sendData = async (formData) => {
@@ -53,7 +56,9 @@ const App = () => {
               <button onClick={(e) => submitForm(e)} className="mt-12 bg-indigo-800 w-full p-4 rounded-lg text-white font-bold tracking-wider uppercase">Predict</button>
             </div>
             <div className="w-full">
-
+              {getData &&  (
+                <p>Modified Data from Flask: {getData.message}</p>
+              )}
             </div>
         </div>
       </div>
