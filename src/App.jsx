@@ -27,20 +27,37 @@ const App = () => {
     };
     const obj2Arr = Object.values(convertedInputs);
     await sendData(obj2Arr);
-    console.log("Halo");
+    await receivedData();
+    console.log(getData);
   }
 
   const sendData = async (formData) => {
     try {
-      const response = await axios.post('http://localhost:5000/check', {
+      await axios.post('http://localhost:5000/check', {
         data: formData,
-      })
-
-      console.log(response.data);
-    } catch (error) { 
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    } catch (error) {
       console.error('Error during POST request:', error);
     }
+  };
+  
+  const receivedData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/sendData', {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      if(response) setData(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
 
   return (
     <>
@@ -56,9 +73,7 @@ const App = () => {
               <button onClick={(e) => submitForm(e)} className="mt-12 bg-indigo-800 w-full p-4 rounded-lg text-white font-bold tracking-wider uppercase">Predict</button>
             </div>
             <div className="w-full">
-              {getData &&  (
-                <p>Modified Data from Flask: {getData.message}</p>
-              )}
+
             </div>
         </div>
       </div>
