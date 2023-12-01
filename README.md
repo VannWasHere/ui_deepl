@@ -6,6 +6,7 @@ How to run project:
 - .\env\Scripts\activate 
 - pip install flask
 - pip install python-dotenv
+- pip install scikit-learn==1.3.0
 - FLASK_APP=app.py
 - FLASK_ENV=development
 

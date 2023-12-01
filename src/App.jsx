@@ -26,8 +26,7 @@ const App = () => {
       merk: parseInt(userInput.merk),
     };
     const obj2Arr = Object.values(convertedInputs);
-    await sendData(obj2Arr);
-    await receivedData();
+    await Promise.all([sendData(obj2Arr), receivedData()]);
   }
 
   const sendData = async (formData) => {
@@ -81,7 +80,9 @@ const App = () => {
               <button onClick={(e) => submitForm(e)} className="mt-12 bg-indigo-800 w-full p-4 rounded-lg text-white font-bold tracking-wider uppercase">Predict</button>
             </div>
             <div className="w-full mt-9 p-5">
-              <div className=""></div>
+              <div className="">
+                {getData}
+              </div>
             </div>
         </div>
       </div>
