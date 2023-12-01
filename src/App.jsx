@@ -26,7 +26,9 @@ const App = () => {
       merk: parseInt(userInput.merk),
     };
     const obj2Arr = Object.values(convertedInputs);
-    await Promise.all([sendData(obj2Arr), receivedData()]);
+    await sendData(obj2Arr);
+    await receivedData();
+    await console.log(getData);
   }
 
   const sendData = async (formData) => {
@@ -49,12 +51,16 @@ const App = () => {
         headers: {
           'Content-Type': 'application/json',
         }
-    });
-      if(response.data && response.data.data) setData(response.data.data);
+      });
+        console.log(response);
+        if (response.data && response.data.output) {
+        setData(response.data.output);
+      }
     } catch (error) {
       console.log(error);
     }
   }
+  
 
   console.log(getData);
 

@@ -10,12 +10,12 @@ CORS(api)
 api.config['stored_data'] = {}
 
 @api.route('/check', methods=['POST'])
+@api.route('/check', methods=['POST'])
 def handle_post():
     try:
         received_data = request.get_json()
         stored_data_list = received_data.get('data', [])
 
-        # Log the received data
         print("Received Data:", stored_data_list)
 
         if not stored_data_list:
@@ -23,9 +23,13 @@ def handle_post():
 
         stored_data_list = [float(i) for i in stored_data_list]
         prediction = ValuePredictor(stored_data_list)
+
+        api.config['prediction'] = prediction
+
         return prediction
     except Exception as e:
         return jsonify({'error': str(e)})
+
 
 
 
@@ -51,10 +55,11 @@ def ValuePredictor(to_predict_list):
     result_json = json.dumps(result)
     return result_json
 
-
 @api.route('/sendData', methods=['GET'])
 def handle_get():
-    return jsonify({"output": api.config.get('prediction')})
+    prediction = api.config.get('prediction')
+    return jsonify({"output": prediction})
+
 
 if __name__ == '__main__':
     api.run(debug=True)

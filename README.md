@@ -7,6 +7,7 @@ How to run project:
 - pip install flask
 - pip install python-dotenv
 - pip install scikit-learn==1.3.0
+- pip install tensorflow==2.13.0
 - FLASK_APP=app.py
 - FLASK_ENV=development
 
