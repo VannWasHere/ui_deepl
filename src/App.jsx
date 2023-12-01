@@ -24,7 +24,8 @@ const App = () => {
     };
     const obj2Arr = [];
     Object.keys(convertedInputs).map((key) => [obj2Arr.push(convertedInputs[key])])
-    return obj2Arr;
+    console.log(obj2Arr);
+    // return obj2Arr;
   }
 
   return (
