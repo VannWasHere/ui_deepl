@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 const App = () => {
 
@@ -22,10 +23,20 @@ const App = () => {
       kilometer: parseInt(userInput.kilometer),
       lokasi: parseInt(userInput.lokasi),
     };
-    const obj2Arr = [];
-    Object.keys(convertedInputs).map((key) => [obj2Arr.push(convertedInputs[key])])
-    console.log(obj2Arr);
-    // return obj2Arr;
+    const obj2Arr = Object.values(convertedInputs);
+    sendData(obj2Arr);
+  }
+
+  const sendData = async (formData) => {
+    try {
+      const response = await axios.post('http://localhost:5000/check', {
+        data: formData,
+      })
+
+      console.log(response.data);
+    } catch (error) { 
+      console.error('Error during POST request:', error);
+    }
   }
 
   return (
@@ -33,7 +44,7 @@ const App = () => {
       <div className="p-10 h-full">
       <h1 className="text-center text-3xl font-bold text-indigo-600">Deep Learning - Test</h1>
         <div className="flex gap-3">
-          <div className="w-full">
+            <div method="post" className="w-full">
               <Select label={"Merk"} name={"merk"} data={['Yamaha', 'Honda', 'Kawasaki', 'Suzuki']} onChange={(value) => onHandleSubmitted("merk", value)}/>
               <Input label={"Tahun Kendaraan"} name={"tahunKendaraan"} onChange={(value) => onHandleSubmitted("tahunKendaraan", value)}/>
               <Input label={"Kapasitas Mesin"} name={"kapasitasMesin"} onChange={(value) => onHandleSubmitted("kapasitasMesin", value)}/>
