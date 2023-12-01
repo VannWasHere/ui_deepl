@@ -1,6 +1,0 @@
-[submodule "api/used-motorcycle-price-prediction"]
-	path = api/used-motorcycle-price-prediction
-	url = https://github.com/daff00/used-motorcycle-price-prediction.git
-[submodule "api"]
-	path = api
-	url = https://github.com/daff00/used-motorcycle-price-prediction.git
