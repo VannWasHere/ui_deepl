@@ -56,8 +56,11 @@ const App = () => {
         }
       });
         if (response.data && response.data.output) {
+          
+        // Convert into Formated String
         const raw_respond = parseInt(JSON.parse(response.data.output));
-        setData(parseInt(raw_respond) * 10);
+        const result = parseInt(raw_respond) * 1;
+        setData(result.toLocaleString('en-US', {useGrouping: true}));
       }
     } catch (error) {
       console.log(error);
@@ -68,9 +71,8 @@ const App = () => {
     <>
       <div className="p-10 h-full">
       <h1 className="text-center text-3xl font-bold text-indigo-600">Deep Learning - Test</h1>
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
             <div method="post" className="w-full">
-
               <Select label={"Lokasi"} name={"lokasi"} 
               data={['Kota Jakarta Barat', 'Kab. Tangerang', 'Kota Jakarta Selatan', 'Kota Bandung', 'Kota Jakarta Timur', 'Kab. Bogor', 'Kota Jakarta Utara', 'Kota Medan',
               'Kota Tangerang', 'Kab. Bandung', 'Kota Batam', 'Kota Tangerang Selatan', 'Kota Bekasi', 'Kota Depok', 'Kota Surabaya', 'Kab. Deli Serdang']} 
@@ -85,9 +87,12 @@ const App = () => {
               <Select label={"Merk"} name={"merk"} data={['Yamaha', 'Honda', 'Kawasaki', 'Suzuki']} onChange={(value) => onHandleSubmitted("merk", value)}/>
               <button onClick={(e) => submitForm(e)} className="mt-12 bg-indigo-800 w-full p-4 rounded-lg text-white font-bold tracking-wider uppercase">Predict</button>
             </div>
-            <div className="w-full mt-9 p-5">
-              <div className="">
-                {getData}
+            <div className="w-full h-full mt-9 p-5 flex justify-center">
+              <div className="w-4/5 p-5 m-12 rounded-xl shadow-lg shadow-indigo-900">
+                { getData && 
+                  <p>Rp. {getData}</p>
+                }
+                <h1 className="text-2xl font-bold tracking-wide">Data Input</h1>
               </div>
             </div>
         </div>
