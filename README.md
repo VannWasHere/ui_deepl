@@ -1,6 +1,7 @@
 # React + Flask 
 <p align="center">
   <img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" alt="React">
+  <span style="margin-right: 30px"></span>
   <img width="300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1280px-Flask_logo.svg.png" alt="Flask">
 </p>
 
