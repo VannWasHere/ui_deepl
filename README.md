@@ -5,6 +5,7 @@
   <img width="300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1280px-Flask_logo.svg.png" alt="Flask">
 </p>
 
+# Set Up
 How to run project:
 - npm install
 - cd api
