@@ -26,9 +26,12 @@ const App = () => {
       merk: parseInt(userInput.merk),
     };
     const obj2Arr = Object.values(convertedInputs);
+    
+    // Send Post Data
     await sendData(obj2Arr);
+    
+    // Wait for post data send and receive data with get method
     await receivedData();
-    await console.log(getData);
   }
 
   const sendData = async (formData) => {
@@ -52,18 +55,14 @@ const App = () => {
           'Content-Type': 'application/json',
         }
       });
-        console.log(response);
         if (response.data && response.data.output) {
-        setData(response.data.output);
+        const raw_respond = parseInt(JSON.parse(response.data.output));
+        setData(parseInt(raw_respond) * 10);
       }
     } catch (error) {
       console.log(error);
     }
   }
-
-  if(getData != null) {
-    getData.split('[')
-  } 
 
   return (
     <>
@@ -88,7 +87,7 @@ const App = () => {
             </div>
             <div className="w-full mt-9 p-5">
               <div className="">
-                {}
+                {getData}
               </div>
             </div>
         </div>

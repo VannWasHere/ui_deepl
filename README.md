@@ -15,3 +15,6 @@ How to run project:
 - flask run
 - cd ..
 - npm run dev
+
+### Optional :
+- Justine = C:\Users\ateen\anaconda3\Scripts\activate.bat
