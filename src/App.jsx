@@ -60,9 +60,10 @@ const App = () => {
       console.log(error);
     }
   }
-  
 
-  console.log(getData);
+  if(getData != null) {
+    getData.split('[')
+  } 
 
   return (
     <>
@@ -87,7 +88,7 @@ const App = () => {
             </div>
             <div className="w-full mt-9 p-5">
               <div className="">
-                {getData}
+                {}
               </div>
             </div>
         </div>
