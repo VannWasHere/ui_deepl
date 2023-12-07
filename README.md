@@ -1,4 +1,5 @@
-# React + Flask 
+### <p align="center">Flask Prediction Web App - DNN Models</p>
+# <p align="center">React + Flask</p>
 <p align="center">
   <img width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" alt="React">
   <span style="margin-right: 30px"></span>
