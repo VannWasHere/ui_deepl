@@ -3,8 +3,7 @@ import axios from "axios";
 
 const App = () => {
 
-  const [getData, setData] = useState(null);
-
+  const [getData, setData] = useState(0);
   const [userInput, setUserInput] = useState({
     lokasi: 1,
     kapasitasMesin: 110,
@@ -121,7 +120,7 @@ const App = () => {
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900 border-t-2">Ouput</td>
-                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> {getData && <span>Rp. {getData}</span> } </td>
+                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> Rp. {getData} </td>
                       </tr>
                     </tbody>
                   </table>
