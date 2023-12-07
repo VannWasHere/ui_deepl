@@ -34,6 +34,10 @@ const App = () => {
     await receivedData();
   }
 
+  const showInputData = async () => {
+
+  }
+
   const sendData = async (formData) => {
     try {
       await axios.post('http://localhost:5000/check', {
@@ -117,7 +121,7 @@ const App = () => {
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900 border-t-2">Ouput</td>
-                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> {getData && <p>Rp. {getData}</p> } </td>
+                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> {getData && <span>Rp. {getData}</span> } </td>
                       </tr>
                     </tbody>
                   </table>
