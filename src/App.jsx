@@ -113,7 +113,7 @@ const App = () => {
 
               <button onClick={(e) => submitForm(e)} className="mt-12 bg-indigo-800 w-full p-4 rounded-lg text-white font-bold tracking-wider uppercase">Predict</button>
             </div>
-            <div className="w-full h-full mt-9 p-5 flex flex-col justify-center">
+            <div className="w-full h-full mt-9 p-5 flex flex-col">
               <div className="w-4/5 p-5 m-12 rounded-xl shadow-lg shadow-indigo-900">
                 <h1 className="text-3xl font-bold tracking-wide text-center">Data Input</h1>
                 <hr className="mt-2"/>
