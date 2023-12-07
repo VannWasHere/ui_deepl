@@ -17,8 +17,6 @@ def handle_post():
         received_data = request.get_json()
         stored_data_list = received_data.get('data', [])
 
-        print("Received Data:", stored_data_list)
-
         if not stored_data_list:
             return jsonify({'error': 'No data stored'})
 
@@ -61,6 +59,7 @@ def ValuePredictor(to_predict_list):
 @api.route('/sendData', methods=['GET'])
 def handle_get():
     global prediction_result  # Access the global variable
+    print(prediction_result)
     return jsonify({"output": prediction_result})
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@ const App = () => {
 
   const [userInput, setUserInput] = useState({
     lokasi: 1,
-    kapasitasMesin: 0,
+    kapasitasMesin: 110,
     tahunKendaraan: 0,
     kilometer: 1,
     merk: 1,
@@ -26,7 +26,7 @@ const App = () => {
       merk: parseInt(userInput.merk),
     };
     const obj2Arr = Object.values(convertedInputs);
-    
+
     // Send Post Data
     await sendData(obj2Arr);
     
@@ -89,10 +89,39 @@ const App = () => {
             </div>
             <div className="w-full h-full mt-9 p-5 flex justify-center">
               <div className="w-4/5 p-5 m-12 rounded-xl shadow-lg shadow-indigo-900">
-                { getData && 
-                  <p>Rp. {getData}</p>
-                }
-                <h1 className="text-2xl font-bold tracking-wide">Data Input</h1>
+                <h1 className="text-3xl font-bold tracking-wide text-center">Data Input</h1>
+                <hr className="mt-2"/>
+                <div className="flex justify-between">
+                  <table className="w-full p-3 table-auto border-slate-700">
+                    <thead>
+                      <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="text-lg text-indigo-900">Lokasi</td>
+                      </tr>
+                      <tr>
+                        <td className="text-lg text-indigo-900">Kapasitas Mesin</td>
+                      </tr>
+                      <tr>
+                        <td className="text-lg text-indigo-900">Tahun Kendaraan</td>
+                      </tr>
+                      <tr>
+                        <td className="text-lg text-indigo-900">Kilometer</td>
+                      </tr>
+                      <tr>
+                        <td className="text-lg text-indigo-900">Merk</td>
+                      </tr>
+                      <tr>
+                        <td className="text-lg text-indigo-900 border-t-2">Ouput</td>
+                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> {getData && <p>Rp. {getData}</p> } </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
         </div>
