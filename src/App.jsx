@@ -1,8 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import Loading from "./images/Components/Loading";
 
 const App = () => {
 
+  // Add loading with state
+  const [loading, setLoading] = useState(false);
   const [getData, setData] = useState(0);
   const [userInput, setUserInput] = useState({
     lokasi: 1,
@@ -17,22 +20,30 @@ const App = () => {
   }
 
   const submitForm = async () => {
-    const convertedInputs = {
-      lokasi: parseInt(userInput.lokasi),
-      kapasitasMesin: parseInt(userInput.kapasitasMesin),
-      tahunKendaraan: parseInt(userInput.tahunKendaraan),
-      kilometer: parseInt(userInput.kilometer),
-      merk: parseInt(userInput.merk),
-    };
-    const obj2Arr = Object.values(convertedInputs);
-
-    // Send Post Data
-    await sendData(obj2Arr);
-    
-    // Wait for post data send and receive data with get method
-    await receivedData();
+    setLoading(true);
+    try {
+      const convertedInputs = {
+        lokasi: parseInt(userInput.lokasi),
+        kapasitasMesin: parseInt(userInput.kapasitasMesin),
+        tahunKendaraan: parseInt(userInput.tahunKendaraan),
+        kilometer: parseInt(userInput.kilometer),
+        merk: parseInt(userInput.merk),
+      };
+      const obj2Arr = Object.values(convertedInputs);
+  
+      // Send Post Data
+      await sendData(obj2Arr);
+      
+      // Wait for post data send and receive data with get method
+      await receivedData();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   }
 
+  // Unfinished Method
   const showInputData = async () => {
 
   }
@@ -102,25 +113,30 @@ const App = () => {
                         <th>Value</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="w-full">
                       <tr>
                         <td className="text-lg text-indigo-900">Lokasi</td>
+                        <td className="text-lg text-indigo-900 text-center">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Kapasitas Mesin</td>
+                        <td className="text-lg text-indigo-900 text-center">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Tahun Kendaraan</td>
+                        <td className="text-lg text-indigo-900 text-center">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Kilometer</td>
+                        <td className="text-lg text-indigo-900 text-center">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Merk</td>
+                        <td className="text-lg text-indigo-900 text-center">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900 border-t-2">Ouput</td>
-                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> Rp. {getData} </td>
+                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> {loading ? <Loading/> : `Rp. ${getData}` } </td>
                       </tr>
                     </tbody>
                   </table>
