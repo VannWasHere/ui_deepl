@@ -116,27 +116,27 @@ const App = () => {
                     <tbody className="w-full">
                       <tr>
                         <td className="text-lg text-indigo-900">Lokasi</td>
-                        <td className="text-lg text-indigo-900 text-center">Test</td>
+                        <td className="text-lg text-indigo-900 text-center w-1/3">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Kapasitas Mesin</td>
-                        <td className="text-lg text-indigo-900 text-center">Test</td>
+                        <td className="text-lg text-indigo-900 text-center w-1/3">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Tahun Kendaraan</td>
-                        <td className="text-lg text-indigo-900 text-center">Test</td>
+                        <td className="text-lg text-indigo-900 text-center w-1/3">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Kilometer</td>
-                        <td className="text-lg text-indigo-900 text-center">Test</td>
+                        <td className="text-lg text-indigo-900 text-center w-1/3">Test</td>
                       </tr>
                       <tr>
                         <td className="text-lg text-indigo-900">Merk</td>
-                        <td className="text-lg text-indigo-900 text-center">Test</td>
+                        <td className="text-lg text-indigo-900 text-center w-1/3">Test</td>
                       </tr>
                       <tr>
-                        <td className="text-lg text-indigo-900 border-t-2">Ouput</td>
-                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center"> {loading ? <Loading/> : `Rp. ${getData}` } </td>
+                        <td className="text-lg text-indigo-900 border-t-2">Hasil Prediksi Harga</td>
+                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center w-1/3"> {loading ? <Loading/> : `Rp. ${getData}` } </td>
                       </tr>
                     </tbody>
                   </table>
