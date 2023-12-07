@@ -117,37 +117,37 @@ const App = () => {
                 <h1 className="text-3xl font-bold tracking-wide text-center">Data Input</h1>
                 <hr className="mt-2"/>
                 <div className="flex justify-between">
-                  <table className="w-full p-3 table-auto border-slate-700">
+                  <table className="w-full p-3 table-auto border-slate-700 mt-4 mb-4">
                     <thead>
                       <tr>
-                        <th>Parameter</th>
-                        <th>Value</th>
+                        <th className="text-xl text-indigo-600 text-left">Parameter</th>
+                        <th className="text-xl text-indigo-600">Value</th>
                       </tr>
                     </thead>
                     <tbody className="w-full">
                       <tr>
-                        <td className="text-lg text-indigo-900">Lokasi</td>
-                        <td className="text-lg text-indigo-900 text-center w-1/3">{userInput.lokasi_item}</td>
+                        <td className="text-lg text-indigo-500">Lokasi</td>
+                        <td className="text-lg text-indigo-500 text-center w-1/3">{userInput.lokasi_item}</td>
                       </tr>
                       <tr>
-                        <td className="text-lg text-indigo-900">Kapasitas Mesin</td>
-                        <td className="text-lg text-indigo-900 text-center w-1/3">{userInput.kapasitasMesin_item}</td>
+                        <td className="text-lg text-indigo-500">Kapasitas Mesin</td>
+                        <td className="text-lg text-indigo-500 text-center w-1/3">{userInput.kapasitasMesin_item}</td>
                       </tr>
                       <tr>
-                        <td className="text-lg text-indigo-900">Tahun Kendaraan</td>
-                        <td className="text-lg text-indigo-900 text-center w-1/3">{userInput.tahunKendaraan}</td>
+                        <td className="text-lg text-indigo-500">Tahun Kendaraan</td>
+                        <td className="text-lg text-indigo-500 text-center w-1/3">{userInput.tahunKendaraan}</td>
                       </tr>
                       <tr>
-                        <td className="text-lg text-indigo-900">Kilometer</td>
-                        <td className="text-lg text-indigo-900 text-center w-1/3">{userInput.kilometer_item}</td>
+                        <td className="text-lg text-indigo-500">Kilometer</td>
+                        <td className="text-lg text-indigo-500 text-center w-1/3">{userInput.kilometer_item}</td>
                       </tr>
                       <tr>
-                        <td className="text-lg text-indigo-900">Merk</td>
-                        <td className="text-lg text-indigo-900 text-center w-1/3">{userInput.merk_item}</td>
+                        <td className="text-lg text-indigo-500">Merk</td>
+                        <td className="text-lg text-indigo-500 text-center w-1/3">{userInput.merk_item}</td>
                       </tr>
                       <tr>
-                        <td className="text-lg text-indigo-900 border-t-2">Hasil Prediksi Harga</td>
-                        <td className="text-lg text-indigo-900 border-t-2 font-bold text-center w-1/3"> {loading ? <Loading/> : `Rp. ${getData}` } </td>
+                        <td className="text-lg text-indigo-500 border-t-2">Hasil Prediksi Harga</td>
+                        <td className="text-lg text-indigo-600 border-t-2 font-bold text-center w-1/3"> {loading ? <Loading/> : `Rp. ${getData}` } </td>
                       </tr>
                     </tbody>
                   </table>
