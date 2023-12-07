@@ -5,9 +5,11 @@
   <img width="300" src="https://miro.medium.com/v2/resize:fit:438/1*0G5zu7CnXdMT9pGbYUTQLQ.png" alt="Flask">
 </p>
 
-# Set Up (Installing Node Module)
-How to run project:
-- npm install
+> [!important]  
+> - Have node.js
+> - python 3.12.0 (kali)
+> - After pull or unzip this project run ```npm install``` in your command prompt
+> - Then execute the command below
 
 # Set Up Flask Application
 - cd api
@@ -30,6 +32,8 @@ How to run project:
 - npm run dev
 
 ### Optional :
+> [!note]  
+> Using conda activate if previous setup won't run
 Activate Conda and Get into directory
+<p>Example</p>
 - Justine = C:\Users\ateen\anaconda3\Scripts\activate.bat
-Note: Need to activate anaconda if setup failed, and reinstall missing python library
