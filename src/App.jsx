@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Loading from "./images/Components/Loading";
+import Loading from "./Components/Loading";
 
 const App = () => {
 
