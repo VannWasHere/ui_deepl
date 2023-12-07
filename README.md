@@ -6,8 +6,8 @@
 </p>
 
 > [!important]  
-> - Have node.js
-> - python 3.12.0 (kali)
+> - Have node.js (v.19) +
+> - python 3.11.5
 > - After pull or unzip this project run ```npm install``` in your command prompt
 > - Then execute the command below
 
