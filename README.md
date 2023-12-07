@@ -16,7 +16,7 @@ How to run project:
 - pip install python-dotenv
 - pip install scikit-learn==1.3.0
 - pip install tensorflow==2.13.0
-* Something missing
+--Something missing--
 
 #### For Set Debuger On
 - FLASK_APP=app.py
