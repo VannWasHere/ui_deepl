@@ -23,7 +23,6 @@ const App = () => {
   const onHandleSubmitted = (name, value, item) => {
     // Add receive data item
     setUserInput((prevState) => ({...prevState, [name]: value, [name + '_item']: item}));
-    console.log(userInput);
   }
 
   const submitForm = async () => {
@@ -50,8 +49,8 @@ const App = () => {
     }
   }
 
-  if(userInput.tahunKendaraan < 2000 || userInput.tahunKendaraan > 2023) {
-    setUserInput((prevState) => ({...prevState, tahunKendaraan: 2000}))
+  if(userInput.tahunKendaraan < 2015 || userInput.tahunKendaraan > 2023) {
+    setUserInput((prevState) => ({...prevState, tahunKendaraan: 2015}))
   }
 
   // Sending and Request Data using Axios
@@ -91,7 +90,7 @@ const App = () => {
   return (
     <>
       <div className="p-10 h-full">
-      <h1 className="text-center text-3xl font-bold text-indigo-600">Deep Learning - Test</h1>
+      <h1 className="text-center text-3xl font-bold text-indigo-600">Prediksi Harga Motor Bekas - <span className="font-bold text-indigo-300">Group B</span> </h1>
         <div className="flex gap-3 items-center">
             <div method="post" className="w-full">
               <Select label={"Lokasi"} name={"lokasi"} 

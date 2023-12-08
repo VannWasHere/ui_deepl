@@ -59,7 +59,6 @@ def ValuePredictor(to_predict_list):
 @api.route('/sendData', methods=['GET'])
 def handle_get():
     global prediction_result  # Access the global variable
-    print(prediction_result)
     return jsonify({"output": prediction_result})
 
 if __name__ == '__main__':
